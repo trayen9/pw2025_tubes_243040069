@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    </div>
     <header class="header">
         <div class="nav-container">
             <div class="nav-left">
@@ -108,7 +109,7 @@
                 </select>
                 <select class="filter-btn">
                     <option>Pendidikan</option>
-                    <option>SMA / SMK / STM</option>
+                    <option>SMA / SMK / MA</option>
                     <option>Diploma / D3 / D4</option>
                     <option>Sarjana / S1</option>
                 </select>
@@ -118,12 +119,9 @@
         <h1 class="section-title">Bidang Pekerjaan Terpopuler</h1>
         <div class="job-categories">
             <a href="#" class="job-category">Semua Pekerjaan</a>
-            <a href="#" class="job-category">Data & Product</a>
+            <a href="#" class="job-category">Driver</a>
             <a href="#" class="job-category">BusDev & Sales</a>
             <a href="#" class="job-category">Design & Creative</a>
-            <a href="#" class="job-category">Marketing & SocMed</a>
-            <a href="#" class="job-category">Finance & Account</a>
-            <a href="#" class="job-category">Recruiting & People</a>
             <a href="#" class="job-category">IT & Engine.</a>
             <a href="#" class="job-category">Admin & Ops</a>
             <a href="#" class="job-category">Health & Science</a>
