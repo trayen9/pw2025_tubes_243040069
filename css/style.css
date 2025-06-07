@@ -6,7 +6,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: linear-gradient(135deg, #6b46c1 0%, #6b7280 100%);
+  background: linear-gradient(135deg, #6b46c1 0%, #444 100%);
   min-height: 100vh;
 }
 
@@ -183,6 +183,7 @@ body {
   transition: all 0.3s;
   min-width: 180px;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .category-item:hover {
@@ -191,8 +192,8 @@ body {
 }
 
 .category-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: #fbbf24;
   border-radius: 4px;
 }
@@ -203,7 +204,7 @@ body {
   border-radius: 20px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -211,7 +212,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   margin-bottom: 20px;
   gap: 15px;
@@ -270,6 +271,15 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
+.section-title {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 .job-categories {
   display: flex;
   gap: 10px;
@@ -298,6 +308,157 @@ body {
   border-color: #007bff;
   transform: translateY(-4px);
   cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
+}
+.content-section {
+  color: white;
+}
+
+.content-section h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.search-button {
+  background: white;
+  color: #4a90e2;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: flex-end; /* Dorong gambar ke kanan */
+}
+
+.hero-image img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.footer {
+  background: #fff;
+  color: #000;
+  padding: 40px 60px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 60px;
+  margin-left: auto;
+}
+
+.footer-col h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.app-buttons img {
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #7f32ff;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .content-section h1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
