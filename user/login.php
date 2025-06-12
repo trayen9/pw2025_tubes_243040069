@@ -3,8 +3,8 @@ session_start();
 $conn = new mysqli("localhost", "root", "", "pw2025_tubes_243040069");
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_POST['admin'];
+$password = $_POST['1'];
 
 $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 $result = $conn->query($query);
