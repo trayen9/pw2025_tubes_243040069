@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    echo "<script>alert('Silakan login terlebih dahulu');window.location='user.php';</script>";
+    exit;
+}
 require "./admin/funtion.php";
 
 $category = isset($_GET['category']) ? $_GET['category'] : '';
@@ -18,16 +23,16 @@ if ($category === '') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamJob - Job Portal</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/job_portal.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <?php include './data/navbar.php'; ?>
+    <?php include './template/navbar.php'; ?>
 
     <main class="main-container">
         <h1 class="hero-title">
@@ -144,7 +149,7 @@ if ($category === '') {
         </div>
     </div>
 
-    <?php include './data/footer.php'; ?>
+    <?php include './template/footer.php'; ?>
 </body>
 
 </html>

@@ -51,16 +51,20 @@ body {
   align-items: center;
 }
 
-.nav-right span {
+.nav-right a {
   color: white;
   opacity: 0.9;
-  cursor: pointer;
+  cursor: poiter;
   transition: opacity 0.3s;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.nav-right span:hover {
-  opacity: 1;
+.nav-right a:hover {
+  opacity: 1; 
 }
+
+
 
 .btn-primary {
   background: #fbbf24;

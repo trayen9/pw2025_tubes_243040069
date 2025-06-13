@@ -1,19 +1,28 @@
 <?php
-session_start();
 $conn = new mysqli("localhost", "root", "", "pw2025_tubes_243040069");
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-$username = $_POST['admin'];
-$password = $_POST['1'];
+session_start();
 
-$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-$result = $conn->query($query);
+$username = $conn->real_escape_string($_POST['username']);
+$password = $_POST['password'];
 
-if ($result->num_rows > 0) {
-    $_SESSION['username'] = $username;
-    header("Location: dashboard.php");
-} else {
-    echo "<script>alert('Login failed');window.location='../user.php';</script>";
+// Ambil data user berdasarkan username
+$result = $conn->query("SELECT * FROM users WHERE username='$username'");
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+    
+    // Verifikasi password
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $user['username'];
+        echo "<script>alert('Login berhasil');window.location='../index.php';</script>";
+    } else {
+        echo "<script>alert('Password salah');window.location='../user.php';</script>";
+    }
+} 
+else {
+    echo "<script>alert('Username tidak ditemukan');window.location='../user.php';</script>";
 }
+
 $conn->close();
 ?>
