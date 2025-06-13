@@ -47,3 +47,26 @@
   background-color: #ffcc45;
   color: #000;
 }
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-section .container {
+    padding: 25px 20px;
+  }
+
+  .contact-section h3 {
+    font-size: 22px;
+  }
+
+  .contact-section p {
+    font-size: 18px;
+  }
+
+  .contact-section .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

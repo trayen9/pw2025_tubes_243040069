@@ -61,56 +61,6 @@ if ($category === '') {
                 <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
 
-            <input type="text" id="live-search-input" placeholder="Cari..." autofocus>
-
-<div id="search-results">
-    </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('live-search-input');
-        const searchResultsDiv = document.getElementById('search-results');
-
-        // Mendeteksi setiap ketikan pada input
-        searchInput.addEventListener('keyup', function() {
-            const searchTerm = this.value.trim(); // Ambil nilai input dan hapus spasi di awal/akhir
-
-            // Jika input kosong, sembunyikan atau bersihkan hasil dan jangan kirim permintaan
-            if (searchTerm === '') {
-                searchResultsDiv.innerHTML = ''; // Mengosongkan hasil
-                // searchResultsDiv.style.display = 'none'; // Atau menyembunyikan div jika kosong
-                return;
-            }
-
-            // // Jika tidak kosong, pastikan div hasil terlihat
-            // searchResultsDiv.style.display = 'block';
-
-            // Membuat objek XMLHttpRequest (untuk AJAX)
-            const xhr = new XMLHttpRequest();
-
-            // Mengatur metode (GET) dan URL untuk permintaan AJAX
-            // 'nama_file_proses_search_anda.php' adalah file PHP yang akan memproses pencarian
-            // 'q=' + encodeURIComponent(searchTerm) adalah data yang akan dikirim (query parameter)
-            xhr.open('GET', 'nama_file_proses_search_anda.php?q=' + encodeURIComponent(searchTerm), true);
-
-            // Fungsi yang dijalankan saat respons dari server diterima
-            xhr.onload = function() {
-                if (xhr.status === 200) { // Jika respons berhasil (kode 200 OK)
-                    // Perbarui div #search-results dengan data yang diterima dari server
-                    searchResultsDiv.innerHTML = xhr.responseText;
-                } else {
-                    // Tangani kesalahan jika ada
-                    searchResultsDiv.innerHTML = '<p style="color: red;">Terjadi kesalahan saat mencari.</p>';
-                    console.error('Request gagal. Status: ' + xhr.status);
-                }
-            };
-
-            // Mengirim permintaan
-            xhr.send();
-        });
-    });
-</script>
-
             <div class="filter-buttons">
                 <select class="filter-btn">
                     <option>Jenis</option>

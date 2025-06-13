@@ -35,3 +35,37 @@ body {
     color: #444;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .container-box {
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .form-box,
+    .blue-box {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .blue-box {
+        order: -1; 
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-box,
+    .blue-box {
+        padding: 20px;
+    }
+
+    .blue-box h2 {
+        font-size: 20px;
+    }
+
+    .social-btns i {
+        font-size: 18px;
+    }
+}

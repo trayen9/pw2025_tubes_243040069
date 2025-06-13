@@ -25,7 +25,6 @@ if ($category === '') {
 <body>
     <?php include './template/navbar.php'; ?>
 
-<!-- Main Content -->
 <section class="py-5 py-5 contact-section">
   <div class="container text-center">
     <h3 class="mb-4">Hubungi Kami untuk Bantuan</h3>

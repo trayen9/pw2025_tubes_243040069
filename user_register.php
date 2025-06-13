@@ -29,12 +29,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Registrasi gagal!'); window.location='user_register.php';</script>";
     }
 
-    // Contoh di file register Anda, setelah pengguna berhasil terdaftar di database:
-// Insert data pengguna baru ke database dengan peran default, misalnya 'user'
-// Contoh: INSERT INTO users (username, password, role) VALUES ('nama_baru', 'password_hash', 'user');
-
-// Setelah pendaftaran, arahkan ke halaman login
-header('Location: user.php'); // Atau login.php
+header('Location: user.php'); 
 exit();
 }
 

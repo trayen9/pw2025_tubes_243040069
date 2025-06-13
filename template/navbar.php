@@ -1,12 +1,12 @@
 <?php
-// Pastikan session sudah dimulai. Ini adalah cara yang lebih aman untuk memulai session.
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Ambil peran pengguna dari sesi, default ke 'guest' jika belum login atau peran tidak diset
+
 $user_role = $_SESSION['role'] ?? 'guest';
-$is_logged_in = isset($_SESSION['username']); // Cek apakah pengguna sudah login
+$is_logged_in = isset($_SESSION['username']); 
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $is_logged_in = isset($_SESSION['username']); // Cek apakah pengguna sudah login
                 <a href="/pw2025_tubes_243040069/kontak.php">Kontak</a>
 
                 <?php
-                // Tautan "Panel Admin" hanya akan muncul jika peran pengguna adalah 'admin'
+                
                 if ($user_role === 'admin'):
                 ?>
                     <a href="/pw2025_tubes_243040069/admin/index.php">Panel Admin</a>
@@ -55,7 +55,7 @@ $is_logged_in = isset($_SESSION['username']); // Cek apakah pengguna sudah login
                         <a href="#">Loker</a>
                         <a href="#">Perusahaan</a>
                         <?php
-                        // Tautan "Panel Admin" juga di mobile menu jika peran pengguna adalah 'admin'
+                        
                         if ($user_role === 'admin'):
                         ?>
                             <a href="/pw2025_tubes_243040069/admin/dashboard.php">Panel Admin</a>

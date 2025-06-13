@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Pastikan form dikirim via POST
 if (!isset($_POST['username']) || !isset($_POST['password'])) {
     echo "<script>alert('Silakan login melalui form!'); window.location='../user.php';</script>";
     exit;
@@ -41,11 +40,11 @@ if (mysqli_num_rows($result) === 1) {
         exit;
     }
 
-    // Contoh di file login Anda, setelah verifikasi kredensial berhasil:
+    
 $_SESSION['logged_in'] = true;
 $_SESSION['username'] = $username_dari_database;
-$_SESSION['role'] = $role_dari_database; // <-- Ini tempatnya diset!
-header('Location: index.php'); // Arahkan ke halaman utama atau dashboard
+$_SESSION['role'] = $role_dari_database; 
+header('Location: index.php'); 
 exit();
 }
 

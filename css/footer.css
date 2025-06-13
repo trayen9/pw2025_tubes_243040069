@@ -72,3 +72,44 @@
   font-size: 14px;
   color: #444;
 }
+ @media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .description h2 {
+    font-size: 20px;
+  }
+
+  .footer {
+    padding: 30px 20px 15px;
+  }
+
+  .app-buttons img {
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  .social-icons i {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+    margin-top: 30px;
+  }
+}
