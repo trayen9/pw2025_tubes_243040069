@@ -30,8 +30,8 @@ if ($category === '') {
     <h3 class="mb-4">Hubungi Kami untuk Bantuan</h3>
     <hr class="w-25 mx-auto">
     <p class="text-muted">
-      Apabila Anda tidak menemukan informasi yang dibutuhkan di bagian Pertanyaan Umum pada FAQ di website Pertamina, 
-      Anda dapat menghubungi kami melalui Pertamina Call Center 135 untuk mendapatkan bantuan dan informasi terkait dengan proses rekrutmen Pertamina.
+      Apabila Anda tidak menemukan informasi yang dibutuhkan di bagian Beranda pada website DreamJob, 
+      Anda dapat menghubungi kami melalui DreamJob Call Center 1811 untuk mendapatkan bantuan dan informasi terkait dengan proses rekrutmen.
     </p>
     <a href="#" class="btn btn-primary mt-3 fw-bold">TEKAN DISINI</a>
   </div>
