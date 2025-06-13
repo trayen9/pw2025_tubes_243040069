@@ -1,3 +1,5 @@
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 <div class="container-box">
     <div class="form-box">
         <h3 class="mb-4">Login</h3>
-        <form action="user/login.php" method="post">
+        <form action="koneksi/login.php" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="Username" required>
             </div>

@@ -1,3 +1,45 @@
+<?php
+if (isset($_POST['submit'])) {
+    $conn = mysqli_connect("localhost", "root", "", "pw2025_tubes_243040069");
+
+    if (!$conn) {
+        die("Koneksi gagal: " . mysqli_connect_error());
+    }
+
+    $username = htmlspecialchars($_POST['username']);
+    $email    = htmlspecialchars($_POST['email']);
+    $password = $_POST['password'];
+    $role     = 'user';
+
+    // Hash password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Cek apakah username atau email sudah dipakai
+    $check = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username' OR email = '$email'");
+    if (mysqli_num_rows($check) > 0) {
+        echo "<script>alert('Username atau email sudah digunakan!'); window.location='user_register.php';</script>";
+        exit;
+    }
+
+    // Insert ke DB
+    $query = "INSERT INTO users (username, email, password, role) VALUES ('$username', '$email', '$hashed_password', '$role')";
+    if (mysqli_query($conn, $query)) {
+        echo "<script>alert('Registrasi berhasil! Silakan login'); window.location='user.php';</script>";
+    } else {
+        echo "<script>alert('Registrasi gagal!'); window.location='user_register.php';</script>";
+    }
+
+    // Contoh di file register Anda, setelah pengguna berhasil terdaftar di database:
+// Insert data pengguna baru ke database dengan peran default, misalnya 'user'
+// Contoh: INSERT INTO users (username, password, role) VALUES ('nama_baru', 'password_hash', 'user');
+
+// Setelah pendaftaran, arahkan ke halaman login
+header('Location: user.php'); // Atau login.php
+exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

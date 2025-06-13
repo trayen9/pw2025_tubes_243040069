@@ -13,17 +13,17 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .logo {
-  color: white;
-  font-size: 24px;
+  color: #fbbf24;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -36,7 +36,7 @@ body {
 .nav-left a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   opacity: 0.9;
   transition: opacity 0.3s;
 }
@@ -57,7 +57,7 @@ body {
   cursor: poiter;
   transition: opacity 0.3s;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .nav-right a:hover {

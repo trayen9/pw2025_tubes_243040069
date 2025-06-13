@@ -1,44 +1,78 @@
-<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+<?php
+// Pastikan session sudah dimulai. Ini adalah cara yang lebih aman untuk memulai session.
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-<header class="header">
-    <div class="nav-container">
-        <div class="nav-left">
-            <div class="logo">DreamJob</div>
-            <a href="#">Lowongan</a>
-            <a href="#">Perusahaan</a>
-            <a href="#">Tentang Kami</a>
-            <a href="#">Kontak</a>
-        </div>
+// Ambil peran pengguna dari sesi, default ke 'guest' jika belum login atau peran tidak diset
+$user_role = $_SESSION['role'] ?? 'guest';
+$is_logged_in = isset($_SESSION['username']); // Cek apakah pengguna sudah login
 
-        <div class="nav-right">
-            <?php if (isset($_SESSION['username'])): ?>
-                <span class="user-greeting">Halo, <?= htmlspecialchars($_SESSION['username']); ?></span>
-                <a href="logout.php" class="btn-primary">Logout</a>
-            <?php else: ?>
-                <a href="user.php">Masuk</a>
-                <a href="user_register.php">Daftar</a>
-                <a href="#" class="btn-primary">Untuk Perusahaan</a>
-            <?php endif; ?>
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar DreamJob</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">DreamJob</div>
+                <a href="/pw2025_tubes_243040069/index.php">Beranda</a>
+                <a href="/pw2025_tubes_243040069/lowongan.php">Lowongan</a>
+                <a href="/pw2025_tubes_243040069/kontak.php">Kontak</a>
 
-            <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
-            <label for="mobile-menu-toggle" class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
+                <?php
+                // Tautan "Panel Admin" hanya akan muncul jika peran pengguna adalah 'admin'
+                if ($user_role === 'admin'):
+                ?>
+                    <a href="/pw2025_tubes_243040069/admin/index.php">Panel Admin</a>
+                <?php endif; ?>
+            </div>
 
-            <div class="mobile-nav">
-                <div class="mobile-nav-content">
-                    <a href="#">Loker</a>
-                    <a href="#">Perusahaan</a>
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <span class="user-greeting">Hi, <?= htmlspecialchars($_SESSION['username']); ?></span>
-                        <a href="logout.php">Logout</a>
-                    <?php else: ?>
-                        <a href="user.php">Masuk</a>
-                        <a href="user_register.php">Daftar</a>
-                        <a href="#" class="btn-primary">Untuk Perusahaan</a>
-                    <?php endif; ?>
+            <div class="nav-right">
+                <?php if ($is_logged_in): ?>
+                    <span class="user-greeting">Halo, <?= htmlspecialchars($_SESSION['username']); ?></span>
+                    <a href="/pw2025_tubes_243040069/user/logout.php" class="btn-primary">Logout</a>
+                <?php else: ?>
+                    <a href="/pw2025_tubes_243040069/user.php">Masuk</a>
+                    <a href="/pw2025_tubes_243040069/user_register.php">Daftar</a>
+                    <a href="#" class="btn-primary">Untuk Perusahaan</a>
+                <?php endif; ?>
+
+                <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <label for="mobile-menu-toggle" class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <div class="mobile-nav">
+                    <div class="mobile-nav-content">
+                        <a href="#">Loker</a>
+                        <a href="#">Perusahaan</a>
+                        <?php
+                        // Tautan "Panel Admin" juga di mobile menu jika peran pengguna adalah 'admin'
+                        if ($user_role === 'admin'):
+                        ?>
+                            <a href="/pw2025_tubes_243040069/admin/dashboard.php">Panel Admin</a>
+                        <?php endif; ?>
+
+                        <?php if ($is_logged_in): ?>
+                            <span class="user-greeting">Hi, <?= htmlspecialchars($_SESSION['username']); ?></span>
+                            <a href="/pw2025_tubes_243040069/user/logout.php">Logout</a>
+                        <?php else: ?>
+                            <a href="/pw2025_tubes_243040069/user.php">Masuk</a>
+                            <a href="/pw2025_tubes_243040069/user_register.php">Daftar</a>
+                            <a href="#" class="btn-primary">Untuk Perusahaan</a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+</body>
+</html>

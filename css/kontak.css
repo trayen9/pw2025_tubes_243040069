@@ -1,0 +1,49 @@
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
+}
+
+.contact-section h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: auto;
+}
+
+.contact-section hr {
+  border-top: 3px solid #fbbf24;
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.contact-section .btn {
+  background-color: #fbbf24;
+  border: none;
+  color: #222;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.contact-section .btn:hover {
+  background-color: #ffcc45;
+  color: #000;
+}

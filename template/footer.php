@@ -1,4 +1,13 @@
-<footer class="footer">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <footer class="footer">
     <div class="footer-container">
         <div class="footer-col description">
             <h2><span style="color: #7f32ff">Dream</span><span style="color: #ffcc00">Job</span></h2>
@@ -38,3 +47,5 @@
         <p>© 2025 <strong>DreamJob.</strong> All rights reserved</p>
     </div>
 </footer>
+</body>
+</html>
